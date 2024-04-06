@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="import.sql" type="DatabaseScript" editBeforeRun="true" singleton="false" nameIsGenerated="true">
+    <script-file value="$PROJECT_DIR$/src/main/java/com/dating/app/import.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="51a9ce4c-7315-49d7-8b29-da0a657ab485" />
+    <method v="2" />
+  </configuration>
+</component>
