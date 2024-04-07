@@ -1,7 +1,7 @@
 package com.dating.app.models;
 
-import com.dating.app.models.Conversation;
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -13,6 +13,7 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private String password;
     
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id")
@@ -34,12 +35,12 @@ public class User {
     
     private List<User> matches;
     private List<User> myBlockeds;
-    private List<User> blockeds;
+    private List<User> blockeds = new ArrayList<>();
     private List<User> likes;
     private List<User> dislikes;
+    private List<User> likedUsers = new ArrayList<>();
     
-    public User() {
-    }
+    public User() {}
     
     public User(Long id, String name, String email, Profile profile, List<User> matches, List<User> myBlockeds, List<User> blockeds, List<User> likes, List<User> dislikes) {
         this.id = id;
@@ -53,12 +54,17 @@ public class User {
         this.dislikes = dislikes;
     }
     
+    
     public Long getId() {
         return id;
     }
     
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getPassword() {
+        return password;
     }
     
     public String getName() {
@@ -101,6 +107,10 @@ public class User {
         this.myBlockeds = myBlockeds;
     }
     
+    public void addBlockedUser(User user) {
+        this.blockeds.add(user);
+    }
+    
     public List<User> getBlockeds() {
         return blockeds;
     }
@@ -117,6 +127,10 @@ public class User {
         this.likes = likes;
     }
     
+    public void addLikedUser(User user) {
+        this.likedUsers.add(user);
+    }
+    
     public List<User> getDislikes() {
         return dislikes;
     }
@@ -125,7 +139,6 @@ public class User {
         this.dislikes = dislikes;
     }
     
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -133,7 +146,6 @@ public class User {
         return getId().equals(user.getId()) && getName().equals(user.getName()) && getEmail().equals(user.getEmail()) && getProfile().equals(user.getProfile()) && getMatches().equals(user.getMatches()) && getMyBlockeds().equals(user.getMyBlockeds()) && getBlockeds().equals(user.getBlockeds()) && getLikes().equals(user.getLikes()) && getDislikes().equals(user.getDislikes());
     }
     
-    @Override
     public int hashCode() {
         return getId().hashCode() + getName().hashCode() + getEmail().hashCode() + getProfile().hashCode() + getMatches().hashCode() + getMyBlockeds().hashCode() + getBlockeds().hashCode() + getLikes().hashCode() + getDislikes().hashCode();
     }

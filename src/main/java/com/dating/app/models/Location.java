@@ -2,15 +2,15 @@ package com.dating.app.models;
 
 import java.util.Objects;
 
-public class Locations {
+public class Location {
     
     private String locationId;
     private String locationName;
     
-    public Locations() {
+    public Location() {
     }
     
-    public Locations(String locationId, String locationName) {
+    public Location(String locationId, String locationName) {
         this.locationId = locationId;
         this.locationName = locationName;
     }
@@ -34,8 +34,8 @@ public class Locations {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Locations)) return false;
-        Locations locations = (Locations) o;
+        if (!(o instanceof Location)) return false;
+        Location locations = (Location) o;
         return Objects.equals(locationId, locations.locationId)
               && Objects.equals(locationName, locations.locationName);
     }

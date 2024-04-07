@@ -1,6 +1,8 @@
 package com.dating.app.services;
 
+import com.dating.app.models.Profile;
 import com.dating.app.models.User;
+import com.dating.app.repositories.ProfileRepository;
 import com.dating.app.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +16,21 @@ public class UserService {
     private final UserRepository userRepository;
     
     @Autowired
+    private ProfileRepository profileRepository;
+    
+    @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+    
+    public void createUserAndProfile() {
+        User user = new User();
+        // establecer las propiedades del usuario
+        userRepository.save(user);
+        
+        Profile profile = new Profile();
+        profile.setUser(user);
+        profileRepository.save(profile);
     }
     
     public List<User> getUsers() {
