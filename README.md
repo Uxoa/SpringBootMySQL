@@ -38,7 +38,7 @@ DatingApp viene con muchas características incluyendo:
 
 ## Contribuir
 
-Agradecemos las contribuciones al proyecto. Antes de enviar un Pull Request, asegúrate de discutir los cambios que deseas hacer con los propietarios del repositorio.
+Agradezco las contribuciones al proyecto. Antes de enviar un Pull Request, asegúrate de discutir los cambios que deseas hacer con la propietaria del repositorio.
 
 ## Licencia
 
@@ -46,5 +46,5 @@ Este proyecto está licenciado bajo la licencia MIT. Para más detalles, consult
 
 Recuerda que este es un proyecto en constante desarrollo, por lo tanto algunas características pueden cambiar en el futuro.
 
-Desde ya agradezco tu interés en nuestro proyecto, y estamos esperando tus contribuciones!
+Desde ya agradezco tu interés en mi proyecto, y estoy esperando tus contribuciones y comentarios!
 
